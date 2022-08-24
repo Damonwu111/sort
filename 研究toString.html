@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = function res(){
+            return 1
+        }
+        const arr = []
+        const obj = {name: 'oj'}
+        let i = a.toString()
+        let arrtos = arr.toString()
+        let objts = obj.toString()
+        console.log(i)
+        console.log(arrtos)
+        console.log(objts)
+
+
+        let real = Object.prototype.toString.call(arr)
+        let num = real.slice(8,-1)
+        console.log(real)
+        console.log(num)
+    </script>
+</body>
+</html>

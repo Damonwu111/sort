@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建一个新对象
+        // 2.将对象的原型设置为构造函数的原型对象
+        // 3.将构造函数的this指向新对象
+        // 4.如果构造器函数（这里即A）设置了返回值，并且返回值是一个Object类型的话，就直接返回该Object，否则返回新创建的空对象
+
+        function myNew(Person) {
+            let newObj = null // 创建一个新的空对象
+            let constractor = Array.prototype.shift.call(arguments)
+            let result = null
+            if (typeof constractor !== 'function') {
+                return new TypeError('type error')
+            }
+            newObj = Object.create(constractor.prototype) // 将新对象的原型设置为函数的原型对象
+            result = constractor.apply(newObj, arguments) // 将构造函数的this指向新对象
+            let flag = result && (typeof result === "object" || typeof result === 'function')
+            return flag ? result : newObj
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const url = "https://so.csdn.net/so/search/all?q=query&t=all&p=1&s=0&tm=0"; 
+        function getUrlQuery(url) {
+            let index = url.indexOf('?')
+            let querys = url.substring(index + 1)
+            let queryArr = querys.split('&')
+            let obj = {}
+            for(let i =0; i< queryArr.length; i++){
+                obj[queryArr[i].split('=')[0]] = queryArr[i].split('=')[1]
+            }
+            return obj
+        }
+        let result = getUrlQuery(url)
+        console.log(result);
+        
+    </script>
+</body>
+</html>

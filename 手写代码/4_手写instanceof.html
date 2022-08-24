@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        @params 
+            left: 实例
+            right: 已有类型
+        */
+        var myinstancof = function (left, right){
+            let proto = Object.getPrototypeOf(left)
+            let prototype = right.prototype
+            while(true){
+                if(proto === prototype) return true
+                if(proto === null) return false
+                proto = Object.getPrototypeOf(proto)
+            }
+        }
+
+        const obj = {name: 'bob'}
+        let res = myinstancof(obj, Array)
+        console.log(res);
+    </script>
+</body>
+</html>

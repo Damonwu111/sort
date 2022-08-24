@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            box-sizing: content-box;
+        } */
+        /* .far{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #555;
+            padding: 50px;
+            left: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+        }
+        .btn{
+            width: 100px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div class="far">老子
+        <div class="son">儿子</div>
+    </div>
+
+    <button class="btn">按钮</button> -->
+    <script>
+        let str1 = 'upper-case'
+        function fun(str) {
+            let arr = str.split('-')
+            let resultArr = arr.map((item) => {
+                return (item.substring(0, 1).toUpperCase() + item.substring(1))
+            })
+            return resultArr.join('')
+        }
+        let res = fun(str1)
+        console.log(res);
+
+        
+        // var obj = {
+        //     name: 'obj',
+        //     say: () => {
+        //         console.log(this.name);
+        //     }
+        // }
+        // var name = 'window'
+        // obj.say();
+        // const values = ['423', 'dgd', 'dgdfhgfh', 'dfgdfg5345d','dfgdfgdfg'];
+        // values.splice(1,1)
+        // console.log(values);
+        // var inp = document.querySelector('#inp')
+        // inp.addEventListener('blur', function(e){
+        //     e.target.value = e.target.value.trim()
+        // })
+        // let str = '  adsf  '
+        // let res = str.trim();
+        // console.log(res.length);
+        // let a = new Promise((resolve, reject) =>{
+        //     // resolve(1)
+        //     reject(2)
+        // }).then(
+        //     res =>{
+        //         console.log(res);
+        //     },
+        //     err =>{
+        //         console.log(err);
+        //     }
+        // )
+        // const arr = [9,8,3,4,5,6,7,1]
+        // function bubble(arr) {
+        //     for(let i = 0; i< arr.length; i++){
+        //         for(let j =0; j < arr.length - i -1; j++){
+        //             if(arr[j]> arr[j+1]){
+        //                 let temp = arr[j]
+        //                 arr[j] = arr[j+1]
+        //                 arr[j+1] = temp
+        //             }
+        //         }
+        //     }
+        //     return arr
+        // }
+
+        // let res = bubble(arr)
+        // console.log(res);
+    // function quickSort(arr, left, right) {
+    //     if(left >= right) return arr
+    //     let i = left,
+    //     j = right,
+    //     base = arr[left]
+    //     while(i < j) {
+    //         while(i<j && arr[j] >= base){
+    //             j--
+    //         }
+    //         while(i <j && arr[i] <= base){
+    //             i++
+    //         }
+            
+    //         if(i <j) {
+    //             let temp = arr[i]
+    //             arr[i] = arr[j]
+    //             arr[j] = temp
+    //         }
+    //     }
+    //     arr[left] = arr[i]
+    //     arr[i] = base
+    //     quickSort(arr, left, i-1)
+    //     quickSort(arr, i+1, right)
+    //     return arr
+    // }
+
+    // const arr = [9,8,3,4,5,6,7,1]
+    // let res = quickSort(arr,0,arr.length-1)
+    // console.log(res)
+    // function doCurrying(fn){
+    //     function curried(...args){
+    //         if(args.length >= fn.length){
+    //             return fn.apply(this, args)
+    //         }else{
+    //             function curried2(...args2){
+    //                 return curried.apply(this, args.concat(args2))
+    //             }
+    //             return curried2
+    //         }
+    //     }
+    //     return curried
+    // }
+
+    // function addThree(x,y,z) {
+    //     return x+y+z
+    // }
+
+    // var curryAdd = doCurrying(addThree)
+    // let res = curryAdd(3)(2)(3)
+    // console.log(res);
+    // const arr = [3,5,2,6,1]
+
+    // function quickSort(arr,left,right) {
+    //     if(left >= right) {
+    //         return arr
+    //     }
+
+    //     let i = left,
+    //     j = right,
+    //     base = arr[left]
+
+    //     while(i <j) {
+    //         while(i<j && arr[j] >= base){
+    //             j--
+    //         }
+
+    //         while(i<j && arr[i] <= base){
+    //             i++
+    //         }
+    //         if(i <j){
+    //             let temp = arr[i]
+    //             arr[i] = arr[j]
+    //             arr[j] = temp
+    //         }
+    //     }
+    //     arr[left] = arr[i]
+    //     arr[i] = base
+
+    //     quickSort(arr, left, i-1)
+    //     quickSort(arr, i+1, right)
+
+    //     return arr 
+    // }
+    // let res = quickSort(arr,0,4)
+    // console.log(res);
+
+
+
+
+
+    // var quickSort_New = function(ary, left, right) {
+    //     if(left >= right) {
+    //         return ary;
+    //     }
+
+    //     var i = left,
+    //         j = right;
+    //         base = ary[left];
+
+    //     while (i < j) {
+    //         // 从右边起，寻找比基数小的数
+    //         while (i<j && ary[j] >= base) {
+    //             j--;
+    //         }
+
+    //         // 从左边起，寻找比基数大的数
+    //         while (i<j && ary[i] <= base) {
+    //             i++
+    //         } 
+
+    //         if (i<j) {
+    //             var temp = ary[i];
+    //             ary[i] = ary[j];
+    //             ary[j] = temp;
+    //         }
+
+    //         console.log(ary)
+    //     }
+
+    //     ary[left] = ary[i];
+    //     ary[i] = base;
+
+    //     quickSort_New(ary, left, i-1);
+    //     quickSort_New(ary, i+1, right);
+
+    //     return ary;
+    // }
+    // quickSort_New(arr, 0, 4)
+    // const arr = [1,3,5,8,6,4,3,2,100,335,54,7657,6,76,7]
+    // arr.sort((a,b) =>{
+    //     return a -b
+    // });
+    // console.log(arr)
+    // function addThree(x,y,z){
+    //     x= x+1
+    //     y= y+1
+    //     z= z+1
+    //     return x+y+z
+    // }
+
+    // function dyCurrying(fn) {
+    //     function curried(...args) {
+    //         if(args.length >= fn.length) {
+    //             return fn.apply(this, args)
+    //         }else{
+    //             function curried2(...args2){
+    //                 return curried.apply(this, args.concat(args2))
+    //             }
+    //             return curried2
+    //         }
+    //     }
+    //     return curried
+    // }
+
+    // var curryAdd = dyCurrying(addThree)
+    // console.log(curryAdd(1,2,3))
+    // console.log(curryAdd(1,2)(3))
+    // console.log(curryAdd(1)(2)(3))
+    
+    // function addHandle(x, y, z) {
+    //     x = x + 2
+    //     y = y * 2
+    //     z = z * z
+    //     return x + y + z
+    // }
+    // function dyCurrying(fn) {
+    //     function curried(...args) {
+    //         // 判断当前已经接收的参数的个数, 可以参数本身需要接受的参数是否已经一致了
+    //         //1.当已经传入的参数 大于等于 需要的参数时, 就执行函数
+    //         if (args.length >= fn.length) {
+    //             //这里绑定this是因为可能外面通过call或者apply进行绑定调用
+    //             return fn.apply(this, args)
+    //         } else {
+    //             // 没有达到个数时, 需要返回一个新的函数, 继续来接收的参数
+    //             function curried2(...args2) {
+    //                 // 接收到参数后, 需要递归调用curried来检查函数的个数是否达到
+    //                 return curried.apply(this, args.concat(args2))
+    //             }
+    //             return curried2
+    //         }
+    //     }
+    //     return curried
+    // }
+    // var curryAdd = dyCurrying(addHandle)
+    // console.log(curryAdd(10, 20, 30))
+    // console.log(curryAdd(10, 20)(30))
+    // console.log(curryAdd(10)(20)(30))
+            
+    // var MAP =  {
+    //     onclick: function () {
+    //     },
+    //     curry: function (val) {
+    //         return function (z) {
+    //             return val++ + z
+    //         }
+    //     }
+    // }
+    // var getInfo = function (val) {
+    //     return MAP[val]
+    // }
+    // var fn = getInfo('curry')
+    // var a = fn(100)                          
+    // console.log(a(200)) //300
+    // console.log(a(300)) //401               
+    // console.log(fn(100)(200))          
+    // console.log(getInfo('curry')(100)(300))
+    // for (var i=1; i<=5; i++) {
+    //     (function f(i){
+    //         setTimeout( function timer(){
+    //             console.log( i );
+    //         }, i*1000 );
+    //     })(i)
+    // }
+    // for (var i=1; i<=5; i++) {
+    //     setTimeout(function timer(){
+    //         console.log( i );
+    //     }, i*1000 );
+    // }
+
+    // setTimeout(function () {
+    //     console.log('1')
+    //     new Promise((resolve, reject) => {
+    //         console.log('2')
+    //         resolve()
+    //     }).then(() => {
+    //         console.log('3')
+    //     })
+    // })
+    // new Promise((resolve, reject) => {
+    //     console.log('6')
+    //     resolve()
+    // }).then(() => {
+    //     setTimeout(function() {
+    //         console.log('7')
+    //     })
+    //     console.log('8')
+    // })
+    // console.log('4')
+    // setTimeout(function() {
+    //     console.log('5')
+    // }) 
+
+    // 64812357
+        // var total = 0; 
+        // function increment() {
+        //     var total = 0 
+        //     total = total + 2
+        // }
+        // function decrease() {
+        //     total = total - 2 
+        // }
+        
+        // increment()
+        // increment()
+        // decrease()	
+        // console.log(total)
+
+        // function increment(a) {
+        //     a.n = 3
+        // }
+
+        // var a = {
+        //     n: 1
+        // }
+        // increment(a)
+
+        // console.log(a)
+        // function increment(a) {
+        //     a = { n: 2 }
+        // }
+        // var a = { n: 1 }
+        // increment(a)
+        // console.log(a)
+
+
+
+        // function increment(a) {
+        //     a = 1
+        // }
+
+        // var a = 0
+
+        // console.log(a)
+
+        // function Foo() {
+        //     var a = 0
+        //     return function () {
+        //         console.log(a++)
+        //     }
+        // }
+
+        // var f1 = Foo()
+        // var f2 = Foo()
+        // console.log(f1);
+        // const arr = [ 1,2,2]
+        // arr.length = 0
+        // console.log(arr);
+        // function getSomething() {
+        //     return "something";
+        // }
+        // async function testAsync() {
+        //     return Promise.resolve("hello async");
+        // }
+        // async function test() {
+        //     const v1 = await getSomething();
+        //     const v2 = await testAsync();
+        //     console.log(v1, v2);
+        // }
+        // test();
+        // function bubble() {
+        //     let a= arguments
+        //     console.log(a.constractor === 'object');
+        //     console.log(a instanceof Object);
+        // }
+        // bubble(1,2,3)
+        // function countTodo(arr) {
+        //     return arr.reduce((total, item) => {
+        //         return total + (item.done ? 1 : 0)
+        //     }, 0)
+        // }
+        // const arr = [{ id: 1 }, { id: 2 }, { id: 1 },{ id: 1 }, { id: 2 }, { id: 1 },{ id: 1 }, ]
+        // let res = arr.reduce((pre, cur) => {
+        //     return pre + (cur.id === 1 ? 1 :0)
+        // }, 0)
+        // console.log(res);
+        // const arr = [9, 5, 7, 8, 3, 1]
+        // console.log(arr)
+        // let a = arr.sort((a, b) => {return a- b})
+        // console.log(a)
+        // const arr = [1, 2, 3]
+        // let str = arr.join('=')
+        // strtoArr = str.
+        // strtoArr = str.split('')
+        // console.log(newArr)
+        // var obj = {
+        //     show: function () {
+        //         console.log(this);
+        //     },
+        //     xiu: () => {
+        //         console.log(this)
+        //     }
+        // }
+        // obj.show();
+        // obj.xiu()
+        // var id = 'GLOBAL';
+        // var obj = {
+        //     id: 'OBJ',
+        //     a: function () {
+        //         console.log(this.id);
+        //     },
+        //     c: function () {
+        //         b: () => {
+        //             console.log(this.id);
+        //         }
+        //     }
+
+        // };
+        // obj.a();    // 'OBJ'
+        // obj.b();
+
+        // function Person() {
+        //     console.log(this);
+        // }
+        // let p = new Person();
+        // let bar = { a: 1, b: 2, obj: {obj1 : 1} };
+        // let baz = Object.assign({}, bar);
+        // console.log(baz)
+        // baz.obj.obj1 = 11111111;
+        // console.log(bar)
+        // const stu = {
+        //     name: 'Bob',
+        //     age: 24
+        // }
+        // const { name: n, age } = stu
+        // console.log(n)
+        // console.log(age)
+        // const school = {
+        //     classes: {
+        //         stu: {
+        //             name: 'Bob',
+        //             age: 24,
+        //         }
+        //     }
+        // }
+        // const { classes: {stu: {name}} } = school
+
+    </script>
+</body>
+
+</html>

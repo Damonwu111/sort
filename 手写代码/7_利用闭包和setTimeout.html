@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function mySetInterval(fn, wait) {
+        //     let t = null
+        //     return {
+        //         start: function () {
+        //             t = setTimeout(() => {
+        //                 fn()
+        //                 this.start()
+        //             }, wait)
+        //         },
+        //         end: function () {
+        //             clearTimeout(t)
+        //             t = null
+        //         }
+        //     }
+        // }
+
+        function fn() {
+            var date = new Date(); //当前客户端的时间日期对象
+            console.log(`发送请求`, `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+        }
+
+        // var timer = mySetInterval(fn,1000)
+        // timer.start()
+
+        function mySetInterval(fn, timeout) {
+            // 控制器，控制定时器是否继续执行
+            var timer = {
+                flag: true
+            };
+
+            // 设置递归函数，模拟定时器执行。
+            function interval() {
+                if (timer.flag) {
+                    fn();
+                    setTimeout(interval, timeout);
+                }
+            }
+
+            // 启动定时器
+            setTimeout(interval, timeout);
+
+            // 返回控制器
+            return timer;
+        }
+
+        mySetInterval(fn, 2000)
+    </script>
+</body>
+
+</html>
