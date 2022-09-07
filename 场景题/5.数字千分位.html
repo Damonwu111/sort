@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 千分位截取
+        let num = 1000000000000
+        function numToT(num) {
+            let str = num.toString().split('').reverse().join('')
+            let res = []
+            for (let i = 0; i < str.length; i++) {
+                res.push(str.substring(i, i + 3))
+                i += 2
+            }
+            return res.reverse().join(',')
+        }
+        let dd = numToT(num)
+        console.log(dd);
+    </script>
+</body>
+
+</html>
